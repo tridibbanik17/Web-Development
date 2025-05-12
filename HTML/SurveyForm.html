@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Survey Form</title>
+  <link rel="stylesheet" href="../CSS/SurveyForm.css">
+</head>
+<body>
+  <h1 id="title">Survey Form</h1>
+  <p id="description">Please fill out this survey with required information</p>
+  <form id="survey-form" method="post" action="https://register-demo.freecodecamp.org"><label id="name-label" class="name">Enter your name: <input id="name" type="text" placeholder="Your Name" required></input></label>
+  <label id="email-label" class="email">Enter your Email: <input id="email" type="email" placeholder="Your Email Address" required></input></label>
+  <label id="number-label" class="number">Enter your age: <input id="number" type="number" min="13" max="150" placeholder="Age must be between 13 and 150"></input></label>
+  <label id="smoke-history">Do you smoke?
+  <select id="dropdown">
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+  </label>
+  <legend>Enter your gender: </legend>
+  <label for="male"><input type="radio" checked value="1" name="gender" id="male" class="inline">male</input></label>
+  <label for="female"><input type="radio" value="2" name="gender" id="female" class="inline"></input>female</label>
+  <legend>What's your ethnicity? </legend>
+  <label><input type="checkbox" value="white" class="inline">White</input></label>
+  <label><input type="checkbox" value="black" class="inline">Black</input></label>
+  <label><input type="checkbox" value="asian" class="inline">Asian</input></label>
+  <label><input type="checkbox" value="latin" class="inline">Latin</input></label>
+  <label for="comments">Comments (Optional) <textarea id="comments" placeholder="Enter your comments" rows="3" cols="30"></textarea></label>
+  <button id="submit" value="Submit" class="submit">Submit</button>
+  </form>
+</body>
+</html>
