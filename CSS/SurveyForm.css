@@ -1,0 +1,42 @@
+body {
+  background-color: rgba(127, 0, 62,0.5);
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+form {
+  width: 50vw;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 0;
+  padding: 1em;
+}
+
+h1,p {
+  text-align: center;
+  margin: 1em auto;
+}
+
+.inline {
+  width: unset;
+  margin: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+
+input, textarea, select {
+  margin: 10px 0 0 0;
+  width: 100%;
+}
+
+.submit {
+  width: 50%;
+  border-color: white;
+  color: white;
+  height: 2em;
+  margin: 1em auto;
+  background-color: #ee4545;
+  min-width: 100px;
+}
