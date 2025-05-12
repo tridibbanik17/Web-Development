@@ -1,0 +1,44 @@
+.header {
+  background-color: #FDBF57;
+  text-align: center;
+  width: 100%;
+  margin: 0 0;
+}
+
+body {
+  background: 100px solid #7A003C;
+  background-color: #7A003C;
+  color: white;
+  font-family: Tahoma, Arial;
+}
+
+img {
+  height: 200px;
+  display: block;
+}
+
+#image {
+  max-width: 100%;
+  height: auto;
+  
+}
+
+figcaption {
+  font-style: italic;
+}
+
+a {
+  color: white;
+}
+
+.mcmaster-website:hover {
+  color: #7A003C;
+}
+
+.tribute-link:hover, .github-link:hover {
+  color: #FDBF57;
+}
+
+footer {
+  background-color: #FDBF57;
+}
