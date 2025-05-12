@@ -5,6 +5,7 @@ body {
 label {
   display: block;
   margin: 0.5rem 0;
+  text-align: center;
 }
 
 form {
@@ -13,6 +14,7 @@ form {
   min-width: 300px;
   margin: 0 auto;
   padding: 1em;
+  text-align: center;
 }
 
 h1,p {
@@ -29,6 +31,7 @@ h1,p {
 input, textarea, select {
   margin: 10px 0 0 0;
   width: 100%;
+  text-align: center;
 }
 
 .submit {
