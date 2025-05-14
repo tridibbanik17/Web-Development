@@ -1,0 +1,121 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/TechnicalDocumentation.css">
+    <title>
+      Simulation Analysis
+    </title>
+  </head>
+  <body>
+    <header id="header">
+      <h2 class="header-title bold">Simulation Analysis for the GitHub project titled <a target="_blank" href="https://github.com/tridibbanik17/Roundabout-Traffic-Simulation.git">Roundabout Traffic Simulation</a></h2><br>
+      <h3 class="header-author bold">Author: Tridib Banik</h3>
+    </header>
+    <nav id="navbar">
+      <header>Simulation Analysis</header>
+      <a href="#Dependencies" class="nav-link">Dependencies</a>
+      <a href="#Car_Classes" class="nav-link">Car Classes</a>
+      <a href="#Simulation_Files'_Description" class="nav-link">Simulation Files' Description</a>
+      <a href="#Running_sim_average.py" class="nav-link">Running sim_average.py</a>
+      <a href="#Results:_base_intersection.py" class="nav-link">Results: base_intersection.py</a>
+      <a href="#Results:_roundabout_upper.py" class="nav-link">Results: roundabout_upper.py</a>
+      <a href="#Results:_roundabout_lower.py" class="nav-link">Results: roundabout_lower.py</a>
+      <a href="#Results_Comparison" class="nav-link">Results Comparison</a>
+      <a href="#Variable_Values" class="nav-link">Variable Values</a>
+      <a href="#Formal_Discussion" class="nav-link">Formal Discussion</a>
+    </nav>
+    <main id="main-doc">
+      <section id="Dependencies" class="main-section">
+        <h2 class="bold">Dependencies</h2>
+        <p>Be sure to install dependencies by using requirements.txt before running any simulation. Otherwise, car colours might not change.</p>
+        <code>numpy</code><br><code>scipy</code><br><code>dearpygui</code>
+        <p>Create a virtual environment. It usually pops up as you open the folder. Then, choose venv, Python version, check off requirements.txt and hit ok. It takes a few minutes to install all the dependencies.</p> 
+
+      </section>
+      <section id="Car_Classes" class="main-section">
+        <h2 class="bold">Car Classes</h2>
+        <p>Yellow colour vehicles = patient-carrying vehicles<br>Red = self-driving vehicles<br>Green = non-self-driving vehicles
+</p>
+      </section>
+      <section id="Simulation_Files'_Description" class="main-section">
+        <h2 class="bold">Simulation Files' Description</h2>
+        <p>Run display_sim_roundabout_upper.py to view the main ground-level intersection.</p>
+        <p>
+          <code>cd ./trafficSimulator-main/trafficSimulator-main/build_and_run/</code><br>
+          <code>python display_sim_roundabout_upper.py</code></p>
+        <p>Note that there are no traffic lights. Traffic lights are redundant because inserting traffic lights in the roundabouts destroys the purpose of roundabouts, which is to speed up traffic flow. The arcs are the entry and exit points for the patient-carrying vehicles. Notice that cars (only yellow cars) can either enter the tunnel or exit from the tunnel through these points.</p> 
+
+        <p>Run display_sim_roundabout_lower.py to view the tunnel’s roundabout, which is only for patient-carrying vehicles going in and out of the hospital.</p>
+        <p>
+          <code>python display_sim_roundabout_lower.py</code></p>
+        <p>Note: The vehicle spawn rate is 5 times lower because the road is only for the use of patient-carrying vehicles, and the speed is 1.5 times the default speed (which is 17 m/s) due to lower overall traffic flow.</p>
+
+      </section>
+      <section id="Running_sim_average.py" class="main-section">
+        <h2 class="bold">Running sim_average.py</h2>
+        <p>Run sim_average_base_intersection.py by importing each of the three .py files (i.e., to run sim_average_base_intersection.py, 'from base_intersection import *' line is required) used for simulating each of the three intersections.</p>
+        <p><code>python sim_average_base_intersection.py</code></p>
+      </section>
+      <section id="Results:_base_intersection.py" class="main-section">
+        <h2 class="bold">Results: base_intersection.py</h2>
+        <p>base_intersection.py (Keeping all default values)<br><br>
+Average Travel Time: 37.16 seconds<br>
+Vehicle Time Variance: 508.12 seconds<br>
+Vehicle Time Standard Deviation: 22.54 seconds<br>
+--- runtime: 33.45 seconds ---<br></p>
+      </section>
+      <section id="Results:_roundabout_upper.py" class="main-section">
+        <h2 class="bold">Results: roundabout_upper.py</h2>
+        <p>roundabout_upper.py (since it is a roundabout, the intersection size is twice the size for base_intersection.py. Since no traffic lights, vehicle speed is reduced by 1.5 times the default speed (two-thirds of the default speed). All other variable values are kept constant.)<br><br>
+Average Travel Time: 23.07 seconds<br>
+Vehicle Time Variance: 94.29 seconds<br>
+Vehicle Time Standard Deviation: 9.71 seconds<br>
+--- runtime: 66.79 seconds ---<br>
+(avg travel time is reduced by ~38% than the base_intersection.py).<br>
+</p>
+      </section>
+      <section id="Results:_roundabout_lower.py" class="main-section">
+        <h2 class="bold">Results: roundabout_lower.py</h2>
+        <p>roundabout_lower.py (Two variables are changed: 1. Vehicle rate is 5 times lower because the road is only for the use of patient-carrying vehicles, 2. Increasing the vehicle speed 1.5 times the default speed due to lower overall traffic flow)<br><br>
+Average Travel Time: 11.49 seconds<br>
+Vehicle Time Variance: 1.12 seconds<br>
+Vehicle Time Standard Deviation: 1.04 seconds<br>
+--- runtime: 6.93 seconds ---<br></p>
+      </section>
+      <section id="Results_Comparison" class="main-section">
+        <h2 class="bold">Results Comparison</h2>
+        <p>Average travel time is reduced by ~50% from roundabout_upper.py and ~69% from base_intersection.py.</p>
+      </section>
+      <section id="Variable_Values" class="main-section">
+        <h2 class="bold">Variable Values</h2>
+        <p>Default values for the base_intersection.py and some additional important values:</p>
+        <ul>
+          <li>lane space = 3.5</li>
+          <li>intersection size = 24 (for roundabouts, the size is ~twice (49))</li>
+          <li>island width = 2</li>
+          <li>Road’s length = 100 (for example, from the very EAST to the edge of the base intersection)</li>
+          <li>Vehicle spawn rate = 20 (I think it’s 20 cars/minute)</li>
+          <li>Speed variance = 2.5 m/s</li>
+          <li>Vehicle speed = 17 m/s</li>
+          <li>Self-driving car amount : regular car amount = 1:2 (proportion rate 0.5)</li>
+          <li>Patient carrying vehicle = vehicle rate / 5 (assuming on average 1 in every 5 vehicles is a patient carrying vehicle.)</li>
+          <li>Patient carrying vehicle speed = 1.5 * default vehicle speed</li>
+          <li>For the ground-level roundabout, vehicle speed = default vehicle speed*2/3</li>
+          <li>Tunnel spawn rate = default spawn rate / 5</li>
+        </ul>
+      </section>
+      <section id="Formal_Discussion" class="main-section">
+        <h2 class="bold">Formal Discussion</h2>
+        <ol>
+          <li>By implementing a non-traffic light ground-level roundabout, the average travel time is reduced by ~38% than the traditional traffic light intersection, even with 1.5 times reduced vehicle speed and twice the size of a big intersection.</li>
+          <li>By implementing a non-traffic light basement-level roundabout, the average travel time for patient-carrying vehicles or vehicles used for emergency medical services is reduced by ~50% from ground-level roundabouts and ~69% from the base traffic light intersection, assuming only 1 in every 5 cars on the ground-level are entering and exiting the hospital with patients are using it and so the speed of the cars is increased by 1.5 times.</li>
+        </ol>
+      </section>     
+    </main>
+    <footer>
+      <h4 id="footer">To learn more about the author's experiences and aspirations, visit his <a id="footer-link" class="linkedin-link" href="https://www.linkedin.com/in/tridib-banik17" target="_blank">LinkedIn profile</a> and <a class="github-link" href="https://github.com/tridibbanik17" target="_blank">GitHub portfolio</a>.</h4>
+    </footer>
+  </body>
+</html>
