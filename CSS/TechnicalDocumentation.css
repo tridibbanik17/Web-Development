@@ -1,0 +1,123 @@
+@media (prefers-reduced-motion:no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  background: #7cfffd;
+  display: flex;
+}
+
+.bold {
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #ccc;
+    overflow-y: auto;
+    border-right: 3px solid #6d6d6d;
+    padding: 1rem;
+}
+
+#navbar header {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#navbar .nav-link {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    padding: 0.5rem 0;
+}
+
+#navbar .nav-link:hover {
+    background-color: #eee;
+}
+
+#main-doc {
+    margin-left: 320px;
+    padding: 2rem;
+    background: #7cfffd;
+    width: 76vw;
+    box-sizing: border-box;
+}
+
+header h2, header h3 {
+    margin: 0.5rem 0;
+}
+
+.main-section {
+    margin-bottom: 2rem;
+}
+
+#header {
+    background-color: burlywood;
+    margin-left: 280px;
+    margin-top: 0;
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 5px solid #ccc;
+    width: 85vw;
+    box-sizing: border-box;
+}
+
+#header a {
+    color: black;
+    text-decoration: underline;
+}
+
+#header a:hover {
+    background-color: #eee;
+}
+
+.main-section h2 {
+    font-size: 1.5em;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.25rem;
+}
+
+code {
+    display: block;
+    background: #ccc;
+    padding: 1rem;
+    margin: 0 0;
+    overflow-x: auto;
+}
+
+ul, ol {
+    margin: 1rem 1rem;
+    padding-left: 0rem;
+}
+
+footer {
+    text-align: center;
+    background: burlywood;
+    padding: 1.5rem;
+    border-top: 5px solid #ccc;
+    margin-top: 3rem;   
+    margin-left: 280px;
+    width: 85vw;
+    box-sizing: border-box;
+}
+
+footer a {
+    color: black;
+    text-decoration: underline;
+    margin: 0 0.25rem;
+}
+
+footer a:hover {
+    background-color: #eee;
+}
