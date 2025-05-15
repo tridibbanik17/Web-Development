@@ -1,0 +1,108 @@
+html {
+  box-sizing: flex-box;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+}
+
+#header-section {
+  height: 100px;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Releaf-logo img {
+  width: auto;
+  height: 80px;
+  object-fit: cover;
+}
+
+#nav-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 0;
+  border-top: 0;
+  border-right: 0;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row; 
+  gap: 5px;
+  width: 50vw;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem 1rem;
+}
+
+.nav-link:hover {
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+.Releaf-logo {
+  top: 0;
+  left: 0;
+  margin: 0;
+  position: fixed;
+  background-color: white;
+  padding: 0rem;
+}
+
+#main {
+  position: absolute;
+  margin-top: 100px;
+}
+
+#sign-up {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+
+@media (max-width: 500px) {
+  #header-img {
+    width: 70%;
+  }
+}
+
+@media (max-width: 800px) {
+  #header-img {
+    width: 40%;
+  }
+}
+
+.video-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.video-container iframe {
+  max-width: 800px;
+  border: none;
+  width: 80%;
+}
