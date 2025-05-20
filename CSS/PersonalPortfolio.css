@@ -1,6 +1,7 @@
 :root {
   --header-color: rgb(194, 102, 194);
   --welcome-color: skyblue;
+  --body-color: #f5f5f5;
 }
 
 html {
@@ -44,13 +45,6 @@ a {
   text-decoration: none;
 }
 
-.project-name {
-  font-family: Tahoma, Sans-serif;
-  font-size: 1.5rem;
-  color: black;
-  font-weight: bold;
-}
-
 #navbar a:hover {
   background-color: #eee;
   border-radius: 4px ;
@@ -70,7 +64,7 @@ ul {
 
 body {
   font-family: Tahoma, sans-serif;
-  background-color: rgb(243, 217, 184);
+  background-color: var(--body-color);
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -95,9 +89,8 @@ body {
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 4rem;
-  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -110,25 +103,77 @@ body {
 }
 
 .project-tile {
-  transition: background-color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: var(--welcome-color);
   text-align: center;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-tile img {
-  display: flex;
   width: 100%;
   max-width: 350px;
   height: 300px;
   object-fit: cover;
   border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
 .project-tile:hover {
-  background-color: var(--welcome-color);
-  border-radius: 5%;
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.project-name {
+  font-family: Tahoma, Sans-serif;
+  font-size: 1.5rem;
+  color: black;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #555;
+}
+
+.project-skills {
+  margin-top: 1rem;
+}
+
+.project-skills button {
+  background-color: var(--body-color);
+  color: #555;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.more-projects {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.more-projects-link {
+  display: inline-block; 
+  padding: 18px 36px; 
+  font-size: 1.5rem; 
+  font-weight: bold; 
+  color: white; 
+  background: linear-gradient(45deg, #006bb7, skyblue);
+  border-radius: 12px; 
+  text-decoration: none; 
+  box-shadow: 0 6px 12px rgba(37, 117, 252, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.more-projects-link:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #resume {
@@ -142,10 +187,13 @@ body {
   background-color: var(--welcome-color);
   color: black;
   text-decoration: none;
+  border-radius: 8px;
 }
 
 .resume-download:hover {
-  background-color: #005f91;
+  background-color: #0084cb;
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #skills {
@@ -155,7 +203,6 @@ body {
   padding-bottom: 2.5rem;
   background:  linear-gradient(135deg, var(--welcome-color), #fce4ec);
   color: black;
-  border-radius: 8px;
   text-decoration: none;
 }
 
@@ -209,12 +256,22 @@ body {
   color: #171515;
 }
 
+.fa-github:hover, .fa-linkedin-in:hover, .fa-youtube:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
 #youtube-link {
   color: #E62117;
 }
 
 #linkedin-link {
   color: #0072B1;
+}
+
+.skill-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 @media only screen and (width=768px) {
