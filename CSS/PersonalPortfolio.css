@@ -230,11 +230,50 @@ body {
   text-decoration: none;
 }
 
-#career-interests ol li {
+.career-interests-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.career-interests-header {
+  font-family: Tahoma, sans-serif;
   text-align: center;
-  font-size: 1.3rem;
-  list-style-position: inside;
-} 
+  font-size: 2rem;
+}
+
+.interests-name {
+  font-family: Tahoma, Sans-serif;
+  font-size: 1.5rem;
+  color: black;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.interests-tile {
+  background-color: var(--welcome-color);
+  text-align: center;
+  border-radius: 10px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interests-photos {
+  width: 100%;
+  max-width: 450px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.interests-tile:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
 #connect {
   display: flex;
@@ -251,7 +290,7 @@ body {
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
   align-items: center;
-  gap: 20px;
+  gap: 45px;
   padding-top: 0;
   padding-bottom: 2rem;
   padding-left: 9rem;
@@ -359,6 +398,12 @@ body {
 @media (max-width: 1200px) {
   .contact-form {
     width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .career-interests-container {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
